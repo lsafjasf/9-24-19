@@ -1,0 +1,70 @@
+{
+  "strategy": "merge",
+  "stats": {
+    "received": 5,
+    "inserted": 2,
+    "conflicts": 2,
+    "updated": 3
+  },
+  "conflicts": {
+    "total": 2,
+    "by_field": {
+      "city": 1,
+      "zip": 1
+    },
+    "won_by_source": {
+      "crm": 1,
+      "erp": 1
+    }
+  },
+  "conflict_log": [
+    {
+      "key": 1,
+      "field": "city",
+      "existing": {
+        "source": "web",
+        "value": "Shanghai"
+      },
+      "incoming": {
+        "source": "crm",
+        "value": "Beijing"
+      },
+      "chosen": {
+        "source": "crm",
+        "value": "Beijing"
+      }
+    },
+    {
+      "key": 1,
+      "field": "zip",
+      "existing": {
+        "source": "web",
+        "value": "200000"
+      },
+      "incoming": {
+        "source": "erp",
+        "value": "100000"
+      },
+      "chosen": {
+        "source": "erp",
+        "value": "100000"
+      }
+    }
+  ],
+  "merged_result": [
+    {
+      "id": 1,
+      "_source": "crm",
+      "name": "Alice",
+      "city": "Beijing",
+      "zip": "100000",
+      "phone": "13800000000"
+    },
+    {
+      "id": 2,
+      "_source": "erp",
+      "name": "Bob",
+      "email": "bob@corp.com"
+    }
+  ]
+}
