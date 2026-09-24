@@ -1,0 +1,87 @@
+{
+  "merged_records": [
+    {
+      "id": "u-1001",
+      "name": "Alice",
+      "email": "alice@web.com",
+      "city": "Beijing",
+      "vip": true
+    },
+    {
+      "id": "u-1002",
+      "name": "Bobby",
+      "phone": "222"
+    }
+  ],
+  "conflict_report": {
+    "total_conflicts": 6,
+    "by_field": {
+      "city": 1,
+      "email": 1,
+      "name": 3,
+      "phone": 1
+    },
+    "conflicts": [
+      {
+        "key": "u-1001",
+        "field": "name",
+        "existing_source": "web",
+        "existing_value": "Alice W",
+        "incoming_source": "crm",
+        "incoming_value": "Alice",
+        "chosen_source": "crm",
+        "chosen_value": "Alice"
+      },
+      {
+        "key": "u-1001",
+        "field": "city",
+        "existing_source": "web",
+        "existing_value": "Shanghai",
+        "incoming_source": "crm",
+        "incoming_value": "Beijing",
+        "chosen_source": "crm",
+        "chosen_value": "Beijing"
+      },
+      {
+        "key": "u-1001",
+        "field": "name",
+        "existing_source": "crm",
+        "existing_value": "Alice",
+        "incoming_source": "import",
+        "incoming_value": "Alice W",
+        "chosen_source": "crm",
+        "chosen_value": "Alice"
+      },
+      {
+        "key": "u-1001",
+        "field": "email",
+        "existing_source": "web",
+        "existing_value": "alice@web.com",
+        "incoming_source": "import",
+        "incoming_value": "alice@old.com",
+        "chosen_source": "web",
+        "chosen_value": "alice@web.com"
+      },
+      {
+        "key": "u-1002",
+        "field": "name",
+        "existing_source": "import",
+        "existing_value": "Bob",
+        "incoming_source": "web",
+        "incoming_value": "Bobby",
+        "chosen_source": "web",
+        "chosen_value": "Bobby"
+      },
+      {
+        "key": "u-1002",
+        "field": "phone",
+        "existing_source": "import",
+        "existing_value": "111",
+        "incoming_source": "web",
+        "incoming_value": "222",
+        "chosen_source": "web",
+        "chosen_value": "222"
+      }
+    ]
+  }
+}
